@@ -1,11 +1,32 @@
 {
-  "printWidth": 80,
+  "trailingComma": "all",
   "tabWidth": 2,
   "useTabs": false,
-  "semi": true,
+  "semi": false,
   "singleQuote": true,
-  "trailingComma": "es5",
+  "jsxSingleQuote": false,
+  "arrowParens": "always",
+  "printWidth": 80,
   "bracketSpacing": true,
-  "arrowParens": "avoid",
-  "endOfLine": "lf"
+  "plugins": ["prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 360
+      }
+    },
+    {
+      "files": ["*.css", "*.scss"],
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
 }
