@@ -2,14 +2,13 @@
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import '../styles/global.css'
-
-const pageTitle = '私のAstro学習ブログ'
+const { pageTitle } = Astro.props
 ---
 
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/practice-astro/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
@@ -17,12 +16,7 @@ const pageTitle = '私のAstro学習ブログ'
   <body>
     <Header />
     <h1>{pageTitle}</h1>
-    <p>ここには、私がAstroを学んでいく旅の様子を投稿します。</p>
-    <ul>
-      <li><a href="/practice-astro/posts/post-1/">記事1</a></li>
-      <li><a href="/practice-astro/posts/post-2/">記事2</a></li>
-      <li><a href="/practice-astro/posts/post-3/">記事3</a></li>
-    </ul>
+    <slot />
     <Footer />
     <script>
       import '../scripts/menu.js'
